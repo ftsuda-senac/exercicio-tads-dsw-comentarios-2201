@@ -1,0 +1,94 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+body {
+    background-color: rgba(180, 198, 231, 255);
+    font-size: 14px;
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+.dados-contato {
+    display: flex;
+    flex-direction: row;
+}
+
+.dados-contato > div:first-child,
+#lista > .item > div:first-child
+{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.dados-contato img,
+#lista > .item img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.dados-contato > div:last-child {
+    font-size: 1.25rem;
+    padding: 50px;
+}
+
+.dados-gerais {
+    background-color: white;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    padding: 20px 80px;
+    margin: 10px 0;
+    border-radius: 15px;
+    transition: all 0.8s ease-in-out;
+}
+
+.dados-gerais:hover {
+    background-color: yellow;
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px #444;
+}
+
+.dados-gerais ul {
+    list-style: none;
+}
+
+.dados-gerais table {
+    width: 100%;
+}
+
+#lista {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#lista > .item {
+    display: flex;
+    flex-direction: column;
+}
+
+#lista > .item .pessoa-dados {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#lista > .item .botao-visualizar {
+    padding: 10px 0;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #16a085;
+    font-size: 1.2rem;
+}

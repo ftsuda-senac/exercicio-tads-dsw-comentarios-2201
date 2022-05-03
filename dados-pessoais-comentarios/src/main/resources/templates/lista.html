@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dados pessoais com comentários</title>
+        <link rel="stylesheet" th:href="@{/css/estilos-visualizacao.css}" />
+    </head>
+
+    <body style="height: 100%;">
+        <main>
+            <header>
+                <h1>Dados pessoais</h1>
+            </header>
+            <article id="lista">
+                <section class="item" th:each="dados : ${dadosLista}">
+                    <div class="img-container">
+                        <img class="pessoa-avatar"
+                             th:src="@{/img/{foto}(foto=${dados.arquivoFoto})}" 
+                             th:alt-title="'Foto do perfil ' + ${dados.nome}" />
+                    </div>
+                    <div class="pessoa-dados">
+                        <h2 th:text="${dados.nome}">Nome pessoa</h2>
+                        <div class="botao-visualizar">
+                            <a th:href="@{/pessoas/{id}/visualizar(id=${dados.id})}">Visualizar</a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+        <script th:src="@{/js/funcoes.js}"></script>
+    </body>
+</html>

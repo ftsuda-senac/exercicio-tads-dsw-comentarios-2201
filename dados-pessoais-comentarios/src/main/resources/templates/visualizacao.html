@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title th:text="${dados.nome + ' - Dados pessoais com comentários'}"></title>
+        <link rel="stylesheet" th:href="@{/css/estilos-visualizacao.css}" />
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <h1 th:text="${dados.nome}">Fernando Tsuda</h1>
+            </header>
+            <section class="dados-contato">
+                <div>
+                    <img class="pessoa-avatar" th:src="@{/img/{foto}(foto=${dados.arquivoFoto})}" title="Foto do perfil" />
+                </div>
+                <div>
+                    <p>Data de nascimento: <span th:text="${#temporals.format(dados.dataNascimento, 'dd/MM/yyyy')}">01/01/1982</span></p>
+                    <p>Telefone: <span th:text="${dados.telefone}">(11) 99999-1234</span></p>
+                    <p>E-mail: <span th:text="${dados.email}">BATATINHA123@teste.com.br</span></p>
+                    <p>LinkedIn: <a th:href="@{dados.linkedinUrl}" th:text="${dados.linkedinUrl}">https://br.linkedin.com/in/BATATINHA123</a></p>
+                    <p>Github: <a th:href="@{dados.githubUrl}" th:text="${dados.githubUrl}">https://github.com/BATATINHA123</a></p>
+                </div>
+            </section>
+            <section class="dados-gerais interesses">
+                <h3>Interesses</h3>
+                <ul>
+                    <li>Interesse 1</li>
+                    <li>Interesse 2</li>
+                    <li>Interesse 3</li>
+                </ul>
+            </section>
+            <div style="margin: 10px 0;">
+                <a th:href="@{/pessoas}" style=" font-size: 1.2rem;">Voltar</a>
+            </div>
+            
+            <!-- SUBSTITUIR O CÓDIGO html ABAIXO PARA MOSTRAR O FORMULÁRIO E A LISTAGEM DOS COMENTÁRIOS CADASTRADOS -->
+            <div style="background-color: #ddd; padding: 100px 50px; border: dashed 8px black;">
+                <h1 style="color: black; font-size: 3rem; text-align: center">IMPLEMENTAR AQUI O FORMULÁRIO E A LISTAGEM DOS COMENTÁRIOS CADASTRADOS</h1>
+            </div>
+
+        </main>
+        <script th:src="@{/js/funcoes.js}"></script>
+    </body>
+
+</html>
